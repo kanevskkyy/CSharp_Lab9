@@ -108,7 +108,32 @@ class Task
                 break;
 
             case 8:
+                Box<string> box = new Box<string>();
 
+                while (true)
+                {
+                    Console.Write("Enter = ");
+                    string[] enteredInfromation = Console.ReadLine().Split();
+                    if (enteredInfromation.Length == 1 && enteredInfromation[0].ToLower() == "end") break;
+
+                    if (enteredInfromation[0].ToLower() == "add") box.Add(enteredInfromation[1]);
+                    if (enteredInfromation[0].ToLower() == "remove") box.Remove(int.Parse(enteredInfromation[1]));
+
+                    if (enteredInfromation[0].ToLower() == "contains")
+                    {
+                        if (box.Contains(enteredInfromation[1])) Console.WriteLine("True");
+                        else Console.WriteLine("False");
+                    }
+
+                    if (enteredInfromation[0].ToLower() == "swap") box.Swap(int.Parse(enteredInfromation[1]), int.Parse(enteredInfromation[2]));
+                    if (enteredInfromation[0].ToLower() == "greater") Console.WriteLine($"Result = {box.CountGreaterThen(enteredInfromation[1])}");
+
+                    if (enteredInfromation[0].ToLower() == "max") Console.WriteLine($"Max = {box.Max()}");
+                    if (enteredInfromation[0].ToLower() == "min") Console.WriteLine($"Min = {box.Min()}");
+                    if (enteredInfromation[0].ToLower() == "print") box.Print();
+                    if (enteredInfromation[0].ToLower() == "sort") box.Sort();
+                    Line();
+                }
                 break;
         }
     }
