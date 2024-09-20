@@ -87,12 +87,10 @@ class Task
                 }
                 Console.Write("Enter first index = ");
                 int firtsIndex = int.Parse(Console.ReadLine());
-                
                 Console.Write("Enter second index = ");
                 int secondIndex = int.Parse(Console.ReadLine());
 
                 taskFour.SwapElements(firtsIndex, secondIndex);
-
                 Line();
 
                 for (int i = 0; i < taskFour.Value.Count; i++)
@@ -100,8 +98,77 @@ class Task
                     Console.WriteLine(taskFour.Value[i]);
                 }
                 break;
-        }
 
+            case 5:
+                Console.Write("Enter amount of number = ");
+                size = int.Parse(Console.ReadLine());
+                Line();
+
+                Box<List<int>> taskFive = new Box<List<int>>(new List<int> { });
+
+                for (int i = 0; i < size; i++)
+                {
+                    Console.Write($"Enter {i + 1} string = ");
+                    int number = int.Parse(Console.ReadLine());
+
+                    taskFive.Value.Add(number);
+
+                }
+                Console.Write("Enter first index = ");
+                firtsIndex = int.Parse(Console.ReadLine());
+                Console.Write("Enter second index = ");
+                secondIndex = int.Parse(Console.ReadLine());
+
+                taskFive.SwapElements(firtsIndex, secondIndex);
+
+                Line();
+
+                for (int i = 0; i < taskFive.Value.Count; i++)
+                {
+                    Console.WriteLine(taskFive.Value[i].ToString());
+                }
+                break;
+
+            case 6:
+                Console.Write("Enter amount of sentences = ");
+                size = int.Parse(Console.ReadLine());
+                Line();
+
+                Box<List<string>> taskSix = new Box<List<string>>(new List<string> { });
+
+                for (int i = 0; i < size; i++)
+                {
+                    Console.Write($"Enter {i + 1} string = ");
+                    string sentence = Console.ReadLine();
+                    taskSix.Value.Add(sentence);
+                }
+                Console.Write("Enter with what we will compare = ");
+                string value = Console.ReadLine();
+
+                Line();
+                Console.WriteLine($"Result = {taskSix.CompareElements(value)}");
+                break;
+
+            case 7:
+                Console.Write("Enter amount of numbers = ");
+                size = int.Parse(Console.ReadLine());
+                Line();
+
+                Box<List<double>> taskSeven = new Box<List<double>>(new List<double> { });
+
+                for (int i = 0; i < size; i++)
+                {
+                    Console.Write($"Enter {i + 1} number = ");
+                    double sentence = double.Parse(Console.ReadLine());
+                    taskSeven.Value.Add(sentence);
+                }
+                Console.Write("Enter with what we will compare = ");
+                double element = double.Parse(Console.ReadLine());
+
+                Line();
+                Console.WriteLine($"Result = {taskSeven.CompareElements(element)}");
+                break;
+        }
     }
     public static void Line()
     {
