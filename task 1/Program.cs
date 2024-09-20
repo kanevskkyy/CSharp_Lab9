@@ -41,9 +41,64 @@ class Task
 
                 for(int i = 0; i < strings.Count; i++)
                 {
-                    Console.WriteLine(strings[i].ToString());
+                    Console.WriteLine(strings[i]);
                 }
 
+                break;
+
+            case 3:
+                Console.Write("Enter amount of numbers = ");
+                size = int.Parse(Console.ReadLine());
+                Line();
+
+                List<Box<int>> integer = new List<Box<int>>();
+
+                for (int i = 0; i < size; i++)
+                {
+                    Console.Write($"Enter {i + 1} number = ");
+                    int number = int.Parse(Console.ReadLine());
+
+                    Box<int> box = new Box<int>(number);
+                    integer.Add(box);
+                }
+                Line();
+
+                for (int i = 0; i < integer.Count; i++)
+                {
+                    Console.WriteLine(integer[i]);
+                }
+
+                break;
+
+            case 4:
+                Console.Write("Enter amount of strings = ");
+                size = int.Parse(Console.ReadLine());
+                Line();
+
+                Box<List<string>> taskFour = new Box<List<string>>(new List<string> { });
+
+                for (int i = 0; i < size; i++)
+                {
+                    Console.Write($"Enter {i + 1} string = ");
+                    string sentence = Console.ReadLine();
+
+                    taskFour.Value.Add(sentence);
+
+                }
+                Console.Write("Enter first index = ");
+                int firtsIndex = int.Parse(Console.ReadLine());
+                
+                Console.Write("Enter second index = ");
+                int secondIndex = int.Parse(Console.ReadLine());
+
+                taskFour.SwapElements(firtsIndex, secondIndex);
+
+                Line();
+
+                for (int i = 0; i < taskFour.Value.Count; i++)
+                {
+                    Console.WriteLine(taskFour.Value[i]);
+                }
                 break;
         }
 
